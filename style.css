@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&display=swap'); 
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: 'Goudy Bookletter 1911', serif;
+    font-size: 3.6rem;
+
+    margin-top: 10vh;
+}
+
+p {
+    font-family: sans-serif;
+}
+
+.litter-basket {
+    width: 30vw;
+    height: auto;
+
+    margin-top: 15vh;
+}
+
+.litter-basket:hover {
+    transform: rotate(345deg);
+}
+

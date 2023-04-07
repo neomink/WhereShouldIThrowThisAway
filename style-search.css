@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&display=swap');
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#search-container {
+    padding-top: 10vh;
+}
+
+#search-box {
+    width: 80vw;
+    height: 10vh;
+
+    border: black 3px solid;
+    border-radius: 5px;
+
+    font-family: 'Goudy Bookletter 1911', serif;
+    font-size: 2.2rem;
+}
+
+.litter-basket {
+    width: 10vw;
+    height: auto;
+    margin-top: 55vh;
+}
+
+.litter-basket:hover {
+    transform: rotate(345deg);
+}
