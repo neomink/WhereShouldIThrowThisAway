@@ -1,31 +1,230 @@
 @import url('https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400&display=swap');
 
 body {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+}
+
+#step-1 {
+    display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 h1 {
     font-family: 'Goudy Bookletter 1911', serif;
-    font-size: 3.6rem;
+    font-size: 64pt;
+    letter-spacing: 1pt;
+    text-align: center;
+    font-weight: lighter;
 
-    margin-top: 10vh;
+    margin: 5vh;
 }
 
-p {
-    font-family: sans-serif;
+h2 {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 18pt;
+    text-align: center;
+    letter-spacing: -0.3pt;
+    font-weight: 300;
 }
 
-.litter-basket {
-    width: 30vw;
+#litter-basket-crop {
+    position: fixed;
+    bottom: 0vh;
+
+    width: 40vw;
+    height: auto;
+}
+
+.trashes {
+    width: 15vw;
+    height: auto;
+}
+
+#cig-butt {
+    position: absolute;
+    top: 43vw;
+    right: 80vw;
+}
+
+#banana-peel {
+    position: absolute;
+    top: 25vw;
+    right:65vw;
+}
+
+#paper-ball-2 {
+    position: absolute;
+    top: 20vw;
+    left: 42vw;
+}
+
+#apple-2 {
+    position: absolute;
+    top: 25vw;
+    left: 65vw;
+}
+
+#can-2 {
+    position: absolute;
+    top: 40vw;
+    left: 80vw;
+}
+
+#step-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#step-2-text-container {
+    border: 2px solid black;
+    
+    width: 100vw;
+    height: 7vh;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+}
+
+#step-2-text {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 36pt;
+    font-weight: 400;
+    letter-spacing: -2pt;
+    
+    white-space: nowrap;
+
+    /* sliding animation */
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    
+    -moz-animation: sliding 15s linear infinite;
+    -webkit-animation: sliding 15s linear infinite;
+    animation: sliding 15s linear infinite;
+}
+
+@-webkit-keyframes sliding {
+    from { -webkit-transform: translateX(100%); }
+    to { -webkit-transform: translateX(-100%); }
+  }
+
+@keyframes sliding {
+    from {
+        -moz-transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+      }
+      to {
+        -moz-transform: translateX(-100%);
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+      }
+}
+
+#litter-basket-up {
+    width: 60vw;
     height: auto;
 
-    margin-top: 15vh;
+    position: relative;
+    top: 3vh;
+
+    z-index: 1;
 }
 
-.litter-basket:hover {
-    transform: rotate(345deg);
+.step-2-trashes {
+    width: 25vw;
+    height: auto;
 }
 
+#step-2-cig-butt {
+    position: absolute;
+    top: 38vw;
+    left: 30vw;
+    transform: rotate(365deg);
+
+    z-index: 2;
+}
+
+#step-2-banana-peel {
+    position: absolute;
+    top: 17vw;
+    left: 47vw;
+    transform: rotate();
+
+    z-index: 2;
+}
+
+#step-2-paper-ball-2 {
+    position: absolute;
+    top: 21vw;
+    left: 35vw;
+    transform: rotate();
+
+    z-index: 2;
+}
+
+#step-2-apple-2 {
+    position: absolute;
+    top: 20vw;
+    left: 23vw;
+    transform: rotate(40deg);
+
+    z-index: 2;
+}
+
+#step-2-can-2 {
+    position: absolute;
+    top: 25vw;
+    left: 48vw;
+    transform: rotate(38deg);
+
+    z-index: 2;
+}
+
+#step-2-cig-butt:hover {
+    z-index: 9999;
+    filter: drop-shadow(0 0 3rem rgb(36, 255, 0));
+}
+#step-2-banana-peel:hover {
+    z-index: 9999;
+    filter: drop-shadow(0 0 3rem rgb(36, 255, 0));
+}
+#step-2-paper-ball-2:hover {
+    z-index: 9999;
+    filter: drop-shadow(0 0 3rem rgb(36, 255, 0));
+}
+#step-2-apple-2:hover {
+    z-index: 9999;
+    filter: drop-shadow(0 0 3rem rgb(36, 255, 0));
+}
+#step-2-can-2:hover {
+    z-index: 9999;
+    filter: drop-shadow(0 0 3rem rgb(36, 255, 0));
+}
+
+
+#popup {
+    position: absolute;
+    bottom: 3vh;
+
+    background-color:rgb(36, 255, 0, 0.75);
+    width: 90vw;
+    height: 85vh;
+
+    z-index: 99999;
+}
+
+#close {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}

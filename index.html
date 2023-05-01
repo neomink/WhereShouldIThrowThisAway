@@ -7,8 +7,85 @@
 
 		<link href="style.css" rel="stylesheet">
 	</head>
-    <body>
-        <h1>Where Should I Throw This Away?</h1>
-        <a href="index-search.html"> <img src="litter-basket.png" alt="litter-basket" class="litter-basket"> </a>
+	<body>
+        <!-- step 1: home page, drag and drop trashes into the litter basket -->
+        <div id="step-1" style="display:flex">
+            <h1>Where Should I Throw This Away?</h1>
+            <button id="good-job-button">Good Job!</button>
+            <h2>(drag and drop trashes into the trash can)</h2>
+
+            <div class="items">
+                <img
+                id="cig-butt" 
+                class="trashes"
+                src="cig-butt.png" 
+                draggable="true" 
+                ondragstart="drag(event)"
+                >
+                <img
+                id="banana-peel" 
+                class="trashes"
+                src="banana-peel.png" 
+                draggable="true" 
+                ondragstart="drag(event)"
+                >
+                <img
+                id="paper-ball-2" 
+                class="trashes"
+                src="paper-ball-2.png" 
+                draggable="true" 
+                ondragstart="drag(event)"
+                >
+                <img
+                id="apple-2" 
+                class="trashes"
+                src="apple-2.png" 
+                draggable="true" 
+                ondragstart="drag(event)"
+                >
+                <img
+                id="can-2" 
+                class="trashes"
+                src="can-2.png" 
+                draggable="true" 
+                ondragstart="drag(event)"
+                >
+                
+
+            </div>
+
+
+            <img 
+                src="litter-basket-crop.png" 
+                id="litter-basket-crop"
+                ondrop="drop(event)"
+                ondragover="dragEnter(event)"
+            >
+        </div>
+
+        <!-- step 2: search page, use current location to load locations of 4 trash cans in order of proximity -->
+        <div id="step-2" style="display:none">
+            <div id="step-2-text-container">
+                <p id="step-2-text">This page will use your current location to provide a list of 5 trash cans nearby.</p>
+            </div>
+            
+            <img src="cig-butt.png" id="step-2-cig-butt" class="step-2-trashes">
+            <img src="banana-peel.png" id="step-2-banana-peel" class="step-2-trashes">
+            <img src="paper-ball-2.png" id="step-2-paper-ball-2" class="step-2-trashes">
+            <img src="apple-2.png" id="step-2-apple-2" class="step-2-trashes">
+            <img src="can-2.png" id="step-2-can-2" class="step-2-trashes">
+
+            <img src ="litter-basket-up.png" id="litter-basket-up">
+
+            <div id="popup" style="display:none">
+                <div id="popup-content">
+                    <!-- pop up goes in here -->
+                </div>
+                
+                <button id="close">x</button>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
     </body>
-</html>
+    </html>
