@@ -11,8 +11,8 @@
         <!-- step 1: home page, drag and drop trashes into the litter basket -->
         <div id="step-1" style="display:flex">
             <h1>Where Should I Throw This Away?</h1>
-            <button id="good-job-button">Good Job!</button>
-            <h2>(drag and drop trashes into the trash can)</h2>
+            <button id="good-job-button" style="display:none">Good Job!</button>
+            <h2 id="instruction">(drag and drop trashes into the trash can)</h2>
 
             <div class="items">
                 <img
@@ -63,7 +63,7 @@
             >
         </div>
 
-        <!-- step 2: search page, use current location to load locations of 4 trash cans in order of proximity -->
+        <!-- step 2: uses current location to load locations of 5 trash cans in order of proximity -->
         <div id="step-2" style="display:none">
             <div id="step-2-text-container">
                 <p id="step-2-text">This page will use your current location to provide a list of 5 trash cans nearby.</p>
@@ -79,11 +79,26 @@
 
             <div id="popup" style="display:none">
                 <div id="popup-content">
-                    <!-- pop up goes in here -->
+                    <!-- address goes in here -->
+                </div>
+                <div id="popup-map">
+                    <!-- embed map goes in here-->
                 </div>
                 
                 <button id="close">x</button>
             </div>
+        </div>
+
+        <!-- step 2-list: shows the same result but in list-->
+        <div id="step-2-list" style="display:none">
+            <div id="step-2-text-container">
+                <p id="step-2-text">This page will use your current location to provide a list of 5 trash cans nearby.</p>
+            </div>
+
+            <div id="list">
+            <!-- list goes in here -->
+            </div>
+
         </div>
 
         <script src="script.js"></script>
