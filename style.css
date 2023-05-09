@@ -32,6 +32,8 @@ h2 {
     text-align: center;
     letter-spacing: -1pt;
     font-weight: 400;
+
+    z-index: 99999;
 }
 
 #litter-basket-crop {
@@ -319,7 +321,8 @@ h2 {
 }
 
 .address:hover {
-    filter: drop-shadow(0 0 0.2rem rgb(36, 255, 0));   
+    filter: drop-shadow(0 0 0.2rem rgb(36, 255, 0));
+    cursor: pointer;
 }
 
 #original-icon {
