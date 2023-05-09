@@ -2,6 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600&display=swap');
 
 body {
+    background-color: rgb(242, 246, 247);
+
     display: flex;
     justify-content: center;
     align-items: center;
