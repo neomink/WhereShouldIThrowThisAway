@@ -15,6 +15,11 @@ const $closePopup = document.getElementById('close')
 const $popupContent = document.getElementById('popup-content')
 const $popupMap = document.getElementById('popup-map')
 
+// for list
+const $showList = document.getElementById('brown-paper-ball')
+const $list = document.getElementById('step-2-list')
+const $listContent = document.getElementById('list-content')
+
 let $dataSet = []
 
 // App Helper Functions
@@ -27,9 +32,6 @@ function calculateDistance(lat1, lon1, lat2, lon2) {
   
     return 12742 * Math.asin(Math.sqrt(a)) * 0.621371; // 2 * R; R = 6371 km, 0.621371 miles per km
   }
-
-// for list
-const $list = document.getElementById('list')
 
 // fetch data
 fetch('data.json')
@@ -53,10 +55,15 @@ function drop(ev) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("text"); // img태그 아이디를 가져옴
     ev.target.appendChild(document.getElementById(data)); // 다른 div태그에 img를 추가함(옮김. 드래그처리)
-
     $instruction.style.display = 'none'
     $goodJobButton.style.display = 'block'
 }
+
+function dragEnter(ev) {
+  ev.preventDefault();
+}
+
+// click good job button to go to step 2
 
 $goodJobButton.addEventListener('click', function (){
     goToStep2()
@@ -92,17 +99,29 @@ function goToStep2(){
 
           console.log($dataSet)
 
-
           // first location
           const first = JSON.stringify($dataSet.slice(0,1));
           const firstObj = JSON.parse(first);
           const firstLocationDescription = firstObj[0].LOCATION_DESCRIPTION
+          const firstLatitide = firstObj[0].Latitude
+          const firstLongitude = firstObj[0].Longitude
 
           $location1.addEventListener('click', function (){
           showFirstPopup()
           })
           function showFirstPopup() {
-            $popupContent.innerHTML = firstLocationDescription
+            $popupContent.innerHTML = `
+            ${firstLocationDescription}
+            <iframe
+              id="embed-content"
+              frameborder="0"
+              scrolling="no"
+              src="https://maps.google.com/maps?q=${firstLatitide},${firstLongitude}&output=embed">
+            </iframe>
+            <a href="https://www.google.com/maps/dir/${userCoordinates.latitude},${userCoordinates.longitude}/${firstLatitide},${firstLongitude}" target="_blank" id="link-to-direction">
+            Direction >>
+            </a>
+            `
             $popup.style.display = 'block'
           }
 
@@ -110,12 +129,25 @@ function goToStep2(){
           const second = JSON.stringify($dataSet.slice(1,2));
           const secondObj = JSON.parse(second);
           const secondLocationDescription = secondObj[0].LOCATION_DESCRIPTION
+          const secondLatitide = secondObj[0].Latitude
+          const secondLongitude = secondObj[0].Longitude
 
           $location2.addEventListener('click', function (){
           showSecondPopup()
           })
           function showSecondPopup() {
-            $popupContent.innerHTML = secondLocationDescription
+            $popupContent.innerHTML = `
+            ${secondLocationDescription}
+            <iframe
+              id="embed-content"
+              frameborder="0"
+              scrolling="no"
+              src="https://maps.google.com/maps?q=${secondLatitide},${secondLongitude}&output=embed">
+            </iframe>
+            <a href="https://www.google.com/maps/dir/${userCoordinates.latitude},${userCoordinates.longitude}/${secondLatitide},${secondLongitude}" target="_blank" id="link-to-direction">
+            Direction >>
+            </a>
+            `
             $popup.style.display = 'block'
           }
 
@@ -123,12 +155,25 @@ function goToStep2(){
           const third = JSON.stringify($dataSet.slice(2,3));
           const thirdObj = JSON.parse(third);
           const thirdLocationDescription = thirdObj[0].LOCATION_DESCRIPTION
+          const thirdLatitide = thirdObj[0].Latitude
+          const thirdLongitude = thirdObj[0].Longitude
 
           $location3.addEventListener('click', function (){
           showThirdPopup()
           })
           function showThirdPopup() {
-            $popupContent.innerHTML = thirdLocationDescription
+            $popupContent.innerHTML = `
+            ${thirdLocationDescription}
+            <iframe
+              id="embed-content"
+              frameborder="0"
+              scrolling="no"
+              src="https://maps.google.com/maps?q=${thirdLatitide},${thirdLongitude}&output=embed">
+            </iframe>
+            <a href="https://www.google.com/maps/dir/${userCoordinates.latitude},${userCoordinates.longitude}/${thirdLatitide},${thirdLongitude}" target="_blank" id="link-to-direction">
+            Direction >>
+            </a>
+            `
             $popup.style.display = 'block'
           }
 
@@ -136,24 +181,50 @@ function goToStep2(){
           const fourth = JSON.stringify($dataSet.slice(3,4));
           const fourthObj = JSON.parse(fourth);
           const fourthLocationDescription = fourthObj[0].LOCATION_DESCRIPTION
+          const fourthLatitide = fourthObj[0].Latitude
+          const fourthLongitude = fourthObj[0].Longitude
 
           $location4.addEventListener('click', function (){
           showFourthPopup()
           })
           function showFourthPopup() {
-            $popupContent.innerHTML = fourthLocationDescription
+            $popupContent.innerHTML = `
+            ${fourthLocationDescription}
+            <iframe
+              id="embed-content"
+              frameborder="0"
+              scrolling="no"
+              src="https://maps.google.com/maps?q=${fourthLatitide},${fourthLongitude}&output=embed">
+            </iframe>
+            <a href="https://www.google.com/maps/dir/${userCoordinates.latitude},${userCoordinates.longitude}/${fourthLatitide},${fourthLongitude}" target="_blank" id="link-to-direction">
+            Direction >>
+            </a>
+            `
             $popup.style.display = 'block'
           }
           // fifth location
           const fifth = JSON.stringify($dataSet.slice(4,5));
           const fifthObj = JSON.parse(fifth);
           const fifthLocationDescription = fifthObj[0].LOCATION_DESCRIPTION
+          const fifthLatitide = fifthObj[0].Latitude
+          const fifthLongitude = fifthObj[0].Longitude
 
           $location5.addEventListener('click', function (){
           showFifthPopup()
           })
           function showFifthPopup() {
-            $popupContent.innerHTML = fifthLocationDescription
+            $popupContent.innerHTML = `
+            ${fifthLocationDescription}
+            <iframe
+              id="embed-content"
+              frameborder="0"
+              scrolling="no"
+              src="https://maps.google.com/maps?q=${fifthLatitide},${fifthLongitude}&output=embed">
+            </iframe>
+            <a href="https://www.google.com/maps/dir/${userCoordinates.latitude},${userCoordinates.longitude}/${fifthLatitide},${fifthLongitude}" target="_blank" id="link-to-direction">
+            Direction >>
+            </a>
+            `
             $popup.style.display = 'block'
           }
           
@@ -168,26 +239,65 @@ function goToStep2(){
     })
 }
 
-// step 2-popup: popup shows the address of the location, street view and a link to google map direction
+// step 2 List: shows 5 addresses in list
 
-// location 1
-// $location1.addEventListener('click', function (){
-//     showPopup()
-// })
+$showList.addEventListener('click', function (){
+  showList()
+})
 
-// $closePopup.addEventListener('click', function (){
-//     closePopup()
-// })
+function showList() {
 
-// function showPopup() {
-//     $popupContent.innerHTML = `
-//     address: ${first.LOCATION_DESCRIPTION}
-//     street view: 
-//     link to direction: 
-//     `
-//     $popup.style.display = 'block'
-// }
+  const first = JSON.stringify($dataSet.slice(0,1));
+  const firstObj = JSON.parse(first);
+  const firstLocationDescription = firstObj[0].LOCATION_DESCRIPTION
 
-// function closePopup() {
-//     $popup.style.display = 'none'
-// }
+  const second = JSON.stringify($dataSet.slice(1,2));
+  const secondObj = JSON.parse(second);
+  const secondLocationDescription = secondObj[0].LOCATION_DESCRIPTION
+
+  const third = JSON.stringify($dataSet.slice(2,3));
+  const thirdObj = JSON.parse(third);
+  const thirdLocationDescription = thirdObj[0].LOCATION_DESCRIPTION
+
+  const fourth = JSON.stringify($dataSet.slice(3,4));
+  const fourthObj = JSON.parse(fourth);
+  const fourthLocationDescription = fourthObj[0].LOCATION_DESCRIPTION
+
+  const fifth = JSON.stringify($dataSet.slice(4,5));
+  const fifthObj = JSON.parse(fifth);
+  const fifthLocationDescription = fifthObj[0].LOCATION_DESCRIPTION
+
+  console.log(firstLocationDescription)
+  console.log(secondLocationDescription)
+  console.log(thirdLocationDescription)
+  console.log(fourthLocationDescription)
+  console.log(fifthLocationDescription)
+
+
+
+  $listContent.innerHTML = `
+  <div>
+    <p class="address">
+      1. ${firstLocationDescription}
+    </p>
+    <p class="address">
+      2. ${secondLocationDescription}
+    </p>
+    <p class="address">
+      3. ${thirdLocationDescription}
+    </p>
+    <p class="address">
+      4. ${fourthLocationDescription}
+    </p>
+    <p class="address" onclick="showFifthPopup()">
+      5. ${fifthLocationDescription}
+     </p>
+
+  </div
+  `
+
+
+  $step2.style.display = 'none'
+  $list.style.display = 'block'
+
+}
