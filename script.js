@@ -1,3 +1,5 @@
+const $content = document.getElementById('plain')
+
 const $step1 = document.getElementById('step-1')
 const $step2 = document.getElementById('step-2')
 const $goodJobButton = document.getElementById('good-job-button')
@@ -16,9 +18,12 @@ const $popupContent = document.getElementById('popup-content')
 const $popupMap = document.getElementById('popup-map')
 
 // for list
-const $showList = document.getElementById('brown-paper-ball')
+const $showList = document.getElementById('list-icon')
 const $list = document.getElementById('step-2-list')
 const $listContent = document.getElementById('list-content')
+
+// undo list
+const $showOriginal = document.getElementById('original-icon')
 
 let $dataSet = []
 
@@ -74,6 +79,7 @@ $goodJobButton.addEventListener('click', function (){
 function goToStep2(){
     $step1.style.display = 'none' // hide step 1 
     $step2.style.display = 'flex' // show step 2
+    $list.style.display = 'none'
 
     // get user's location
     navigator.geolocation.getCurrentPosition(function(position) {
@@ -267,16 +273,8 @@ function showList() {
   const fifthObj = JSON.parse(fifth);
   const fifthLocationDescription = fifthObj[0].LOCATION_DESCRIPTION
 
-  console.log(firstLocationDescription)
-  console.log(secondLocationDescription)
-  console.log(thirdLocationDescription)
-  console.log(fourthLocationDescription)
-  console.log(fifthLocationDescription)
-
-
-
   $listContent.innerHTML = `
-  <div>
+  <div id="adress-container">
     <p class="address">
       1. ${firstLocationDescription}
     </p>
@@ -289,15 +287,16 @@ function showList() {
     <p class="address">
       4. ${fourthLocationDescription}
     </p>
-    <p class="address" onclick="showFifthPopup()">
+    <p class="address" onclick="">
       5. ${fifthLocationDescription}
      </p>
-
-  </div
+  </div>
   `
-
 
   $step2.style.display = 'none'
   $list.style.display = 'block'
-
 }
+
+$showOriginal.addEventListener('click', function (){
+  goToStep2()
+})
