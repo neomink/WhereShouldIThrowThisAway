@@ -22,8 +22,9 @@ const $showList = document.getElementById('list-icon')
 const $list = document.getElementById('step-2-list')
 const $listContent = document.getElementById('list-content')
 
-// undo list
+// back to original layout
 const $showOriginal = document.getElementById('original-icon')
+
 
 let $dataSet = []
 
@@ -208,6 +209,7 @@ function goToStep2(){
             `
             $popup.style.display = 'block'
           }
+
           // fifth location
           const fifth = JSON.stringify($dataSet.slice(4,5));
           const fifthObj = JSON.parse(fifth);
@@ -233,7 +235,6 @@ function goToStep2(){
             `
             $popup.style.display = 'block'
           }
-          
 
           // to close popup
           $closePopup.addEventListener('click', function (){
@@ -275,22 +276,22 @@ function showList() {
 
   $listContent.innerHTML = `
   <div id="adress-container">
-    <p class="address">
-      1. ${firstLocationDescription}
-    </p>
-    <p class="address">
-      2. ${secondLocationDescription}
-    </p>
-    <p class="address">
-      3. ${thirdLocationDescription}
-    </p>
-    <p class="address">
-      4. ${fourthLocationDescription}
-    </p>
-    <p class="address" onclick="">
-      5. ${fifthLocationDescription}
-     </p>
-  </div>
+  <p class="address" id="first-address">
+    ${firstLocationDescription}
+  </p>
+  <p class="address" id="second-address">
+    ${secondLocationDescription}
+  </p>
+  <p class="address" id="third-address">
+    ${thirdLocationDescription}
+  </p>
+  <p class="address" id="fourth-address">
+    ${fourthLocationDescription}
+  </p>
+  <p class="address" id="fifth-address">
+    ${fifthLocationDescription}
+   </p>
+</div>
   `
 
   $step2.style.display = 'none'
