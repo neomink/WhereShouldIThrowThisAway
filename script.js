@@ -16,6 +16,10 @@ const $popup = document.getElementById('popup')
 const $closePopup = document.getElementById('close')
 const $popupContent = document.getElementById('popup-content')
 const $popupMap = document.getElementById('popup-map')
+const $info = document.getElementById('info')
+const $infoPopup = document.getElementById('info-popup')
+const $infoPopupContent = document.getElementById('info-popup-content')
+const $infoClose = document.getElementById('info-close')
 
 // for list
 const $showList = document.getElementById('list-icon')
@@ -242,6 +246,21 @@ function goToStep2(){
           })
           function closePopup() {
             $popup.style.display = 'none'
+          }
+
+          //to open info popup
+          $info.addEventListener('click', function (){
+            showInfoPopup()
+            })
+          function showInfoPopup() {
+            $infoPopup.style.display = 'block'
+          }
+
+          $infoClose.addEventListener('click',function(){
+            closeInfoPopup()
+          })
+          function closeInfoPopup() {
+            $infoPopup.style.display = 'none'
           }
     })
 }

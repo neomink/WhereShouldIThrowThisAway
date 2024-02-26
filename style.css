@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&display=swap'); 
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap');
 
 body {
     background-color: rgb(242, 246, 247);
@@ -17,20 +18,20 @@ body {
 }
 
 h1 {
-    font-family: 'Goudy Bookletter 1911', serif;
-    font-size: 64pt;
-    letter-spacing: 1pt;
+    font-family: "Hanken Grotesk", sans-serif;
+    font-size: 60pt;
     text-align: center;
-    font-weight: lighter;
+    font-weight: 400;
+    letter-spacing: -0.5pt;
 
     margin: 5vh;
 }
 
 h2 {
-    font-family: 'Work Sans', sans-serif;
+    font-family: "Hanken Grotesk", sans-serif;
     font-size: 18pt;
     text-align: center;
-    letter-spacing: -1pt;
+    /* letter-spacing: -.5pt; */
     font-weight: 400;
 
     z-index: 99999;
@@ -81,19 +82,21 @@ h2 {
 
 #good-job-button {
     width: 130px;
-    height: 35px;
-    border: 2px solid rgb(36, 255, 0, 0.75);
+    height: 38px;
+    border: 2px solid black;
     border-radius: 30px;
     background-color: transparent;
 
     font-size: 16pt;
-    font-family: 'Work Sans', sans-serif;
-    letter-spacing: -1pt;
+    font-family: "Hanken Grotesk", sans-serif;
+    /* letter-spacing: -1pt; */
     font-weight: 400;
 }
 
 #good-job-button:hover {
+    border: 2px solid black;
     filter: drop-shadow(0 0 0.3rem rgb(36, 255, 0));
+    cursor: pointer;
 }
 
 /* step 2 */
@@ -109,7 +112,7 @@ h2 {
     border: 2px solid black;
     
     width: 100vw;
-    height: 7vh;
+    height: 7.5vh;
 
     overflow: hidden;
 
@@ -118,10 +121,10 @@ h2 {
 }
 
 #step-2-text {
-    font-family: 'Work Sans', sans-serif;
-    font-size: 36pt;
+    font-family: "Hanken Grotesk", sans-serif;
+    font-size: 32pt;
     font-weight: 400;
-    letter-spacing: -2pt;
+    letter-spacing: -1pt;
     
     white-space: nowrap;
 
@@ -178,7 +181,7 @@ h2 {
 
     z-index: 0;
 
-    font-family: monospace;
+    font-family: "Hanken Grotesk", sans-serif;
     font-size: 12pt;
     color: black;
     line-height: 180%;
@@ -191,9 +194,11 @@ h2 {
 
 #step-2-cig-butt {
     position: absolute;
-    top: 38vw;
-    left: 30vw;
+    top: 16vw;
+    left: 18vw;
     transform: rotate(365deg);
+    width: 50vw;
+    height: auto;
 
     z-index: 2;
 }
@@ -260,7 +265,22 @@ h2 {
     position: absolute;
     bottom: 3vh;
 
-    background-color:rgb(36, 255, 0, 0.75);
+    background-color: rgb(255, 255, 255, 0.75);
+    border: 2px solid black;
+    border-radius: 30px;
+    width: 90vw;
+    height: 85vh;
+
+    z-index: 99999;
+}
+
+#info-popup {
+    position: absolute;
+    bottom: 3vh;
+
+    background-color: rgb(255, 255, 255, 0.75);
+    border: 2px solid black;
+    border-radius: 30px;
     width: 90vw;
     height: 85vh;
 
@@ -277,32 +297,101 @@ h2 {
     align-items: center;
     flex-direction: column;
 
-    font-size: 58pt;
-    font-family: 'Work Sans', sans-serif;
-    font-weight: 600;
+    font-size: 48pt;
+    font-family: "Hanken Grotesk", sans-serif;
+    font-weight: 400;
     text-align: center;
     letter-spacing: -1pt;
 }
 
+#info-popup-content {
+    padding-top: 2vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    font-size: 28pt;
+    font-family: "Hanken Grotesk", sans-serif;
+    font-weight: 400;
+    text-align: center;
+    letter-spacing: -.7pt;
+}
+
+#info-contact {
+    padding-top: 5.5vw;
+
+    font-size: 32pt;
+    font-family: "Hanken Grotesk", sans-serif;
+    font-weight: 400;
+    text-align: center;
+    letter-spacing: -.7pt;
+    color: black;
+    text-decoration: none;
+}
+
+#info-contact:hover {
+    cursor: pointer;
+    color: black;
+    filter: drop-shadow(0 0 0.3rem rgb(36, 255, 0));
+    text-decoration: underline;
+}
+
+#info-email {
+    font-size: 32pt;
+    font-family: "Hanken Grotesk", sans-serif;
+    font-weight: 400;
+    text-align: center;
+    letter-spacing: -.7pt;
+    color: black;
+}
+
+#info-email:hover{
+    cursor: pointer;
+    color: black;
+    filter: drop-shadow(0 0 0.3rem rgb(36, 255, 0));
+    text-decoration: underline;
+}
+
 #embed-content {
-    padding-top: 5vh;
+    padding-top: 7.5vh;
     width: 50vw;
     height: 50vh;
 }
 
 #close {
     position: absolute;
-    right: 0px;
-    top: -15px;
+    right: 13px;
+    top: -1px;
 
     border: none;
     background-color: transparent;
     font-size: 3rem;
 }
 
-#close:hover {
-    color: white;
+#info-close{
+    position: absolute;
+    right: 13px;
+    top: -1px;
+
+    border: none;
+    background-color: transparent;
+    font-size: 3rem;
+}
+
+#info-close:hover {
+    color: black;
     cursor: pointer;
+    filter: drop-shadow(0 0 0.3rem rgb(36, 255, 0));
+}
+
+#close:hover {
+    color: black;
+    cursor: pointer;
+    filter: drop-shadow(0 0 0.3rem rgb(36, 255, 0));
 }
 
 #link-to-direction {
@@ -310,16 +399,16 @@ h2 {
     right: 2vw;
     bottom: 2vh;
 
-    font-family: 'Work Sans', sans-serif;
+    font-family: "Hanken Grotesk", sans-serif;
     font-weight: 400;
     font-size: 2rem;
-    letter-spacing: -0.5pt;
     color: black;
 
 }
 
 #link-to-direction:hover {
-    color: white;
+    color: black;
+    filter: drop-shadow(0 0 0.3rem rgb(36, 255, 0));
 }
 
 #list-icon {
@@ -328,11 +417,26 @@ h2 {
     right: 2.5vh;
     margin: 0px;
 
-    font-family: 'Work Sans', sans-serif;
-    font-size: 20pt;
+    font-family: "Hanken Grotesk", sans-serif;
+    font-size: 28pt;
     font-weight: 400;
     letter-spacing: -0.3pt;
+}
 
+#info {
+    position: fixed;
+    bottom: 10px;
+    left: 4.5vh;
+    margin: 0;
+
+    font-family: "Hanken Grotesk", sans-serif;
+    font-size: 35pt;
+    font-weight: 400;
+}
+
+#info:hover {
+    filter: drop-shadow(0 0 0.3rem rgb(36, 255, 0));
+    cursor: pointer;
     text-decoration: underline;
 }
 
@@ -341,11 +445,11 @@ h2 {
 
     padding-left: 2vw;
     padding-right: 4vw;
-    padding-top: 4vw;
+    padding-top: 3vw;
 
     font-size: 48pt;
-    font-family: 'Work Sans', sans-serif;
-    font-weight: 500;
+    font-family: "Hanken Grotesk", sans-serif;
+    font-weight: 400;
     letter-spacing: -0.5pt;
 
 
@@ -383,8 +487,8 @@ h2 {
     right: 2.5vh;
     margin: 0px;
 
-    font-family: 'Work Sans', sans-serif;
-    font-size: 20pt;
+    font-family: "Hanken Grotesk", sans-serif;
+    font-size: 28pt;
     font-weight: 400;
     letter-spacing: -0.3pt;
 
@@ -394,6 +498,7 @@ h2 {
 #list-icon:hover {
     filter: drop-shadow(0 0 0.3rem rgb(36, 255, 0));
     cursor: pointer;
+    text-decoration: underline;
 }
 
 #original-icon:hover {
